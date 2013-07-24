@@ -8,6 +8,6 @@ Motion::Project::App.setup do |app|
   %w(
     rake_tasks
   ).each do |x|
-    app.files.unshift(File.join(File.dirname(__FILE__), "rm_activerecord/#{x}.rb"))
+    app.files.unshift(File.join(File.dirname(__FILE__), "rm-activerecord/#{x}.rb"))
   end
 end
