@@ -1,6 +1,7 @@
 desc 'Initializes RMActiveRecord by creating an empty db and config file.'
 task 'db:init' do
   dir = File.expand_path(File.join(File.dirname(__FILE__), '..'))
+  dir = "#{dir}/rm-activerecord/"
 
   if File.exists?("config/database.yml")
     puts "db:init: Error: config/database.yml already exists"
