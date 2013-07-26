@@ -27,4 +27,13 @@ task 'db:gen_migration' do
     puts "db:gen_migration: Error: config/database.yml not found. Please run db:init first."
     next
   end
+
+  filename = "db/migrate/#{Time.now.strftime("%Y%m%d%H%M%S")}_#{name.underscore}.rb"
+  File.open(filename, "w+") do |fp|
+    fp.write("class #{} < ActiveRecord::Migration\n")
+    fp.write("  def up\n  end\n\n")
+    fp.write("  def down\n  end\n")
+    fp.write("end\n")
+  end
+  puts "db:gen_migration: Created new migration file at db/migrate/#{filename}"
 end
