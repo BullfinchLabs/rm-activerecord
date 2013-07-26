@@ -5,7 +5,7 @@ task 'db:init' do
 
   if File.exists?("config/database.yml")
     puts "db:init: Error: config/database.yml already exists"
-    return
+    next
   end
 
   mkdir_p("config/") if !File.exists?("config/")
