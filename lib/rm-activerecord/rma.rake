@@ -30,7 +30,7 @@ task 'db:gen_migration' do
 
   filename = "db/migrate/#{Time.now.strftime("%Y%m%d%H%M%S")}_#{name.underscore}.rb"
   File.open(filename, "w+") do |fp|
-    fp.write("class #{} < ActiveRecord::Migration\n")
+    fp.write("class #{name} < ActiveRecord::Migration\n")
     fp.write("  def up\n  end\n\n")
     fp.write("  def down\n  end\n")
     fp.write("end\n")
