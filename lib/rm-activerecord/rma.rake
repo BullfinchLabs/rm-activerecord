@@ -13,8 +13,8 @@ task 'db:init' do
   mkdir_p("db/migrate/") if !File.exists?("db/migrate/")
 
   puts "db:init: Creating config/database.yml"
-  cp("#{dir}/database.yml",File.join("config","database.yml"), :verbose => true)
+  cp("#{dir}/database.yml",File.join("config","database.yml"), :verbose => false)
 
   puts "db:init: Creating empty SQLite3 database"
-  cp("#{dir}/db.sqlite3",File.join("db","db.sqlite3"), :verbose => true)
+  cp("#{dir}/db.sqlite3",File.join("db","db.sqlite3"), :verbose => false)
 end
