@@ -18,3 +18,13 @@ task 'db:init' do
   puts "db:init: Creating empty SQLite3 database"
   cp("#{dir}/db.sqlite3",File.join("db","db.sqlite3"), :verbose => false)
 end
+
+desc 'Create a new migration. E.g. rake db:gen_migration name=<NameOfMigratioN>'
+task 'db:gen_migration' do
+  name = ENV['name']
+
+  if !File.exists?("config/database.yml")
+    puts "db:gen_migration: Error: config/database.yml not found. Please run db:init first."
+    next
+  end
+end

@@ -6,6 +6,7 @@ end
 
 Motion::Project::App.setup do |app|
   %w(
+    rm-utils
   ).each do |x|
     app.files.unshift(File.join(File.dirname(__FILE__), "rm-activerecord/#{x}.rb"))
   end
