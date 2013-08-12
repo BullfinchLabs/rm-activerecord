@@ -37,3 +37,9 @@ task 'db:gen_migration' do
   end
   puts "db:gen_migration: Created new migration file at db/migrate/#{filename}"
 end
+
+desc 'Run the migrations'
+task 'db:migrate' do
+  puts "db:migrate: Running migrations"
+end
+

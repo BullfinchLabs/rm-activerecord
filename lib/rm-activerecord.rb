@@ -11,5 +11,11 @@ Motion::Project::App.setup do |app|
     app.files.unshift(File.join(File.dirname(__FILE__), "rm-activerecord/#{x}.rb"))
   end
 
+  %w(
+    base
+  ).each do |x|
+    app.files.unshift(File.join(File.dirname(__FILE__), "rm-activerecord/active_record/#{x}.rb"))
+  end
+
   load File.join(File.dirname(__FILE__), "rm-activerecord/rma.rake")
 end
